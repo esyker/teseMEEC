@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_18n71eq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:collaboration id="Collaboration_0uvb1i9">
+    <bpmn:participant id="Participant_1noot9z" processRef="payment-retrieval" />
+  </bpmn:collaboration>
+  <bpmn:process id="payment-retrieval" name="Payment Retrieval" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Payment Retrieval requested">
+      <bpmn:outgoing>Flow_19x033m</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1cmgzh4" name="Payment Received">
+      <bpmn:incoming>Flow_0l88vfd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Activity_038dcfy" name="Charge Credit Card" camunda:type="external" camunda:topic="change-card">
+      <bpmn:incoming>Flow_0i94zk0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l88vfd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Activity_0p8812w" name="Approve payment" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="amount" label="Amount" type="long" />
+          <camunda:formField id="item" label="Item" type="string" />
+          <camunda:formField id="approved" label="Approved?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_19x033m</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i94zk0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0l88vfd" sourceRef="Activity_038dcfy" targetRef="Event_1cmgzh4" />
+    <bpmn:sequenceFlow id="Flow_19x033m" sourceRef="StartEvent_1" targetRef="Activity_0p8812w" />
+    <bpmn:sequenceFlow id="Flow_0i94zk0" sourceRef="Activity_0p8812w" targetRef="Activity_038dcfy" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0uvb1i9">
+      <bpmndi:BPMNShape id="Participant_1noot9z_di" bpmnElement="Participant_1noot9z" isHorizontal="true">
+        <dc:Bounds x="160" y="110" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0l88vfd_di" bpmnElement="Flow_0l88vfd">
+        <di:waypoint x="590" y="170" />
+        <di:waypoint x="642" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19x033m_di" bpmnElement="Flow_19x033m">
+        <di:waypoint x="278" y="170" />
+        <di:waypoint x="350" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i94zk0_di" bpmnElement="Flow_0i94zk0">
+        <di:waypoint x="450" y="170" />
+        <di:waypoint x="490" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="242" y="152" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="215" y="195" width="90" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1cmgzh4_di" bpmnElement="Event_1cmgzh4">
+        <dc:Bounds x="642" y="152" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="637" y="195" width="47" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08kd6qz_di" bpmnElement="Activity_038dcfy">
+        <dc:Bounds x="490" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_016dd6u_di" bpmnElement="Activity_0p8812w">
+        <dc:Bounds x="350" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
