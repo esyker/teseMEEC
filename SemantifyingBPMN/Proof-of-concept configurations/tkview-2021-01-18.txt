@@ -1,3 +1,0 @@
-TransactionKind	 ; View   ; Request Decision ; Request 	       ; Promise Decision ; Promise ; Execute ; Declare 	      ; Decision Accept ; Accept
-TK01 			 ; Custom ;                  ; pede validacao  ;                  ;         ; Valida  ; Passa processo    ;                 ;   aceita resultado
-TK02 			 ; HappyFlow

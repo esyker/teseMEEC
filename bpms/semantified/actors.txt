@@ -1,0 +1,4 @@
+1-Robot ; Robot generating data   
+2-Robot BPMN; BPMN manager
+3-Hospital ; Data sink
+4-Assistance; Hospital Assistance

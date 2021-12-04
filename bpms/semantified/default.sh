@@ -1,0 +1,1 @@
+java -jar SemantifyingBPMN-0.1.3.jar --actors ./actors.txt --tpt ./tpt.txt --tkdepend ./tkdepend.txt --output-file-bpmn hospital_assistance.bpmn --tkview ./tkview.txt --output-file-txt hospital_assistance.txt

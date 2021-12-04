@@ -1,0 +1,3 @@
+TK01;TK01; 1-Robot  ; 2-Robot BPMN ; PK01 ; [product] send data
+TK02;TK02; 2-Robot BPMN    ; 3-Hospital ; PK02 ; [product] send data
+TK03;TK03; 3-Hospital ; 4-Assistance ; PK03; [product] ask for assistance

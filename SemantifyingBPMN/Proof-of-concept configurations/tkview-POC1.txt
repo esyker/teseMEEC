@@ -1,5 +1,0 @@
-TransactionKind, view pattern definition
-TK01, HappyFlow
-TK02, HappyFlow
-TK03, HappyFlow
-TK04, HappyFlow
