@@ -1,4 +1,0 @@
-TransactionKind  ; View   ; Request Decision ; Request ; Promise Decision ; Promise ; Decline ; After Decline Decision ; Execute			   ; Declare    ; Decision Accept ; Accept ; Reject ; Evaluate Rejection ; Stop
-TK01             ; Custom ; 		   ; Pedido  ; 		      ; 		 ;	 ; 		         ;   Executar o pedido de compra     ;  Declara   ; 		  ;  Aceita  ; rejeita	 ;    		    ;  para
-TK02             ; Custom ; 		   ; Pedido  ; 		      ; 		 ;	 ; 		         ;   Executar o pedido de compra     ;  Declara   ; 		  ;  Aceita     ; rejeita	 ;    		    ;  para
-TK03             ; Custom ; 		   ; Pedido  ; 		      ; 		 ;	 ; 		         ;   Executar o pedido de compra     ;  Declara   ; 		  ;  Aceita     ; rejeita	 ;    		    ;  para

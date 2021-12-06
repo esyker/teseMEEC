@@ -1,0 +1,4 @@
+TransactionKind  ; View   ; Request Decision ; Request ; Promise Decision ; Promise ; Decline ; After Decline Decision ; Execute			   ; Declare    ; Decision Accept ; Accept ; Reject ; Evaluate Rejection ; Stop
+TK01             ; Custom ; 		   ; Send New Data  ; 		      ; 		 ;	 ; 		         ;   Save Data    ;  Successful write  ; 		  ;  Accept Data Write ; Reject Data Write	 ;    		    ;  Blockchain Write Error
+TK02             ; Custom ; 		   ; New Data  ; 		      ; 		 ;	 ; 		         ;   Analyze and validate the data     ;  Declares Data Analysis  ; 		  ;  Accepts     ; Rejects	 ;    		    ;  Invalid Data
+TK03             ; Custom ; 		   ; New Request  ; 		      ; 		 ;	 ; 		         ;   Execute request     ;  Declares requested Service   ; 		  ;  Accepts Service     ; Rejects Service	 ;    		    ;  Service Unavailable
